@@ -573,4 +573,73 @@ LocalPlayer.CharacterAdded:Connect(function()
         createGui()
         updateFOVCircle()
     end
+
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Script feito por Kipressao11
+-- Coloque este script em StarterGui (como LocalScript)
+
+-- Cria o ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "Kipressao11_Notification"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Cria o quadro (fundo da notificação)
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 50)
+frame.Position = UDim2.new(0, 10, 1, -60) -- canto inferior esquerdo
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+frame.BackgroundTransparency = 0.2
+frame.BorderSizePixel = 0
+frame.Parent = screenGui
+
+-- Cria o texto
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, -10, 1, 0)
+textLabel.Position = UDim2.new(0, 5, 0, 0)
+textLabel.BackgroundTransparency = 1
+textLabel.Text = "Script feito por Kipressao11"
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.TextScaled = true
+textLabel.Font = Enum.Font.SourceSansBold
+textLabel.TextXAlignment = Enum.TextXAlignment.Left
+textLabel.Parent = frame
+
+-- Efeito de aparecer e desaparecer
+frame.BackgroundTransparency = 1
+textLabel.TextTransparency = 1
+
+for i = 1, 10 do
+	frame.BackgroundTransparency = 1 - i * 0.08
+	textLabel.TextTransparency = 1 - i * 0.1
+	task.wait(0.05)
+end
+
+wait(5) -- tempo que fica visível
+
+for i = 1, 10 do
+	frame.BackgroundTransparency = i * 0.1
+	textLabel.TextTransparency = i * 0.1
+	task.wait(0.05)
+end
+
+screenGui:Destroy()
