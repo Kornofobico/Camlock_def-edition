@@ -54,7 +54,7 @@ local function updateFOVCircle()
     fovCircle.Thickness = 2
     fovCircle.Color = Color3.fromRGB(0, 255, 0)
     fovCircle.Filled = false
-    fovCircle.Transparency = 1
+    fovCircle.Transparency = 0.4
     fovCircle.Radius = fov
     fovCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
 end
@@ -624,4 +624,5 @@ for i = 1, 10 do
 end
 
 screenGui:Destroy()
+
 
